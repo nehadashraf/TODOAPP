@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.spanner
+{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(169, 84, 84, 0.559);
+    position: fixed;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 10s;
+}
+.spanner::after{
+    content:"";
+    width: 50px;
+    height: 50px;
+    border-left: 5px solid black;
+    border-radius: 50%;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    
+}
+:root{
+     --primary-color: #ededed;
+    --secondary-color:#212121; 
+    --third-color:#008080;
+    --forth-color:#0e8282;
+    --fifth-color:#CD5C5C;
+
+}
+.darkTheme{
+    --primary-color: #000106;
+    --secondary-color:#fff;
+    --third-color:#00808052;
+    --forth-color:#00808052;
+    --fifth-color:#cd5c5c82;
+}
+.row{
+    margin: 0;
+}
+body{
+    background-color: var( --primary-color);
+}
+.container{
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.container .row {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    background-color:var(--fifth-color);
+    justify-content:space-around;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-top: 20px;
+    color: var(--primary-color);
+}
+.container .row i{
+    font-size: larger;
+    text-align: center;
+    margin-top: 15px;
+}
+.container .row .fa-moon{
+color: var(--secondary-color);
+}
+.error{
+   height: 0;
+   overflow: hidden;
+   transition: all 1s;
+}
+.error h4{
+   text-align: center;
+   color:red;
+}
+.container .AddTask{
+    width: 60%;
+    background-color: rgba(212, 209, 215, 0.491);
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 0;
+    overflow: hidden;
+    transition: all 2s;
+}
+.container .AddTask .data{
+    padding: 20px;
+
+}
+.container .AddTask .data label{
+    display: flex;
+}
+.container .AddTask .data input{
+    width: 90%;
+}
+
+.container .AddTask .Add{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 30%;
+    padding: 6px;
+    font-size: 15px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.container .AddTask .Add button{
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: var(--forth-color);
+    margin-left: 20px;
+color: var(--primary-color);
+}
+.container .TaskList{
+    background-color:var(--third-color);
+    width: 60%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    color: white;
+/*     height: 0;
+    overflow: hidden; */
+    margin-top: 10px;  
+}
+.container .TaskList .MainDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.container .TaskList .div1{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 35%;
+}
+.container .TaskList .div2{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 35%;
+}
+.container .TaskList .div1 img{
+    width:50%;
+}
+.container .TaskList .div2 i{
+    font-size: 20px;
+    color: rgb(149, 8, 8);
+    cursor: pointer;
+}
+
+.NoTask{
+    text-align: center;
+    color: rgba(255, 0, 0, 0.616);
+}
+.border{
+    border: 1px solid;
+}
+.tasks{
+width: 80%;
+margin: auto;
+}
+.tasks h1{
+text-align: center;
+color: var(--fifth-color);
+}
+.tasks .bigImages{
+width: 50%;
+margin: auto;
+}
+.tasks .bigImages img{
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+    border: 5px solid var(--fifth-color);
+}
+.tasks .images{
+    width: 70%;
+    margin: auto;
+}
+
+.tasks .images img{
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+    border: 1px solid var(--fifth-color);
+    cursor: pointer;
+} 
+@keyframes move{
+    from{
+    transform: rotate(1turn);
+    }
+    to{
+        transform: rotate(10turn);
+    }
+}
+@media(max-width:750px){
+    .container .row {
+        width: 100%;
+    }
+    .error h4{
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    .container .AddTask{
+        width: 90%;
+    }
+    .container .TaskList{
+        width: 90%;
+    }
+    .container .TaskList .div1{
+        width: 40%;
+    }
+    .container .TaskList .div2{
+        width: 47%;
+    }
+    .container .TaskList .div1 img{
+        width:50%;
+    }
+    .tasks{
+    width: 80%;
+    }
+    .tasks h1{
+    font-size: 25px;
+    }
+    .tasks .bigImages{
+    width: 100%;
+    }
+    .tasks .bigImages img{
+        width: 100%;
+        height: 300px;
+        margin: 10px 0px;
+    }
+    .tasks .images{
+        width: 100%;
+        margin: auto;
+    }
+    
+    .tasks .images img{
+        width: 60px;
+        height: 60px;
+        margin: auto;
+        justify-content: space-around;
+        border: 1px solid var(--fifth-color);
+        cursor: pointer;
+    } 
+    
+}
